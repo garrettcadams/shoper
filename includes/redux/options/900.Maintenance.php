@@ -1,0 +1,96 @@
+<?php
+return array(
+	'title'           => esc_html__('Maintenance', 'ciyashop' ),
+	'id'              => 'maintenance_section',
+	'customizer_width'=> '400px',
+	'icon'            => 'fa fa-toggle-on',
+	'desc'            => esc_html__('Enable/disable Maintenance or Coming Soon mode', 'ciyashop' ),
+	'fields'          => array(
+		array(
+			'id'         => 'enable_maintenance',
+			'type'       => 'switch',
+			'title'      => esc_html__('Enable Maintenance?', 'ciyashop' ),
+			'on'         => esc_html__('Yes', 'ciyashop' ),
+			'off'        => esc_html__('No', 'ciyashop' ),
+			'default'    => '0',
+		),
+		array(
+			'id'       => 'maintenance_mode',
+			'type'     => 'button_set',
+			'title'    => esc_html__('Maintenance Mode', 'ciyashop' ),
+			'options'  => array(
+				'maintenance' => esc_html__('Maintenance', 'ciyashop' ),
+				'comingsoon'  => esc_html__('Coming Soon', 'ciyashop' ),
+			),
+			'default'      => 'maintenance',
+			'required'     => array( 'enable_maintenance', '=', '1' ),
+		),
+		array(
+			'id'           => 'maintenance_title',
+			'type'         => 'text',
+			'title'        => esc_html__('Maintenance Title', 'ciyashop' ),
+			'default'      => esc_html__('Site is Under Maintenance', 'ciyashop' ),
+			'required'     => array( 'maintenance_mode', '=', 'maintenance' ),
+		),
+		array(
+			'id'           => 'maintenance_subtitle',
+			'type'         => 'text',
+			'title'        => esc_html__('Maintenance Subtitle', 'ciyashop' ),
+			'default'      => esc_html__('This Site is Currently Under Maintenance. We will back shortly', 'ciyashop' ),
+			'required'     => array( 'maintenance_mode', '=', 'maintenance' ),
+		),
+		array(
+			'id'           => 'comingsoon_title',
+			'type'         => 'text',
+			'title'        => esc_html__('Coming Soon Title', 'ciyashop' ),
+			'default'      => esc_html__('Coming soon', 'ciyashop' ),
+			'required'     => array( 'maintenance_mode', '=', 'comingsoon' ),
+		),
+		array(
+			'id'           => 'comingsoon_subtitle',
+			'type'         => 'text',
+			'title'        => esc_html__('Coming Soon Subtitle', 'ciyashop' ),
+			'default'      => esc_html__('We are currently working on a website and won\'t take long. Don\'t forget to check out our Social updates.', 'ciyashop' ),
+			'required'     => array( 'maintenance_mode', '=', 'comingsoon' ),
+		),
+		array(
+			'id'           => 'comingsoon_date',
+			'type'         => 'date',
+			'title'        => esc_html__('Coming Soon Date', 'ciyashop' ),
+			'subtitle'     => esc_html__('Select coming soon date.', 'ciyashop' ),
+			'placeholder'  => esc_html__('Click to enter a date', 'ciyashop' ),
+			'required'     => array( 'maintenance_mode', '=', 'comingsoon' ),
+			'default'      => date( 'm/d/Y', strtotime('+1 months') ),
+		),
+		array(
+			'id'           => 'comming_soon_social_icons',
+			'type'         => 'switch',
+			'title'        => esc_html__('Social Icons', 'ciyashop' ),
+			'subtitle'     => esc_html__('Show/hide social icons.', 'ciyashop' ),
+			'default'      => true,
+			'required'     => array( 'enable_maintenance', '=', '1' ),
+		),
+		array(
+			'id'           => 'comming_soon_newsletter',
+			'type'         => 'switch',
+			'title'        => esc_html__('Display Newsletter', 'ciyashop' ),
+			'subtitle'     => esc_html__('Show/hide newsletter.', 'ciyashop' ),
+			'default'      => false,
+			'required'     => array( 'enable_maintenance', '=', '1' ),
+		),
+		array(
+			'id'           => 'comming_page_newsletter_shortcode',
+			'type'         => 'select',
+			'title'        => esc_html__('Newsletter Form', 'ciyashop' ),    
+			'subtitle'     => esc_html__('Select newsletter form for display newsletter box on Comming Soon/Maintenance Page.', 'ciyashop' ),   
+			'data'         => 'posts',
+			'args'         => array(
+				'post_type'=> 'mc4wp-form',
+			),
+			'required'     => array(
+				array( 'enable_maintenance', '=', '1' ),
+				array( 'comming_soon_newsletter', '=', '1' ),
+			),
+		),
+	)
+);

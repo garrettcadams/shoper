@@ -1,0 +1,216 @@
+<?php
+return array(
+	'title'           => esc_html__('Site Logo', 'ciyashop' ),
+	'id'              => 'generalsettings',	
+	'customizer_width'=> '400px',
+	'icon'            => 'fa fa-flag',
+	'fields'          => array(
+		array(
+			'id'    => 'site-logo-section-start',
+			'type'  => 'section',
+			'title' => esc_html__('Site Logo Setting', 'ciyashop' ),
+			'indent'=> true
+		),
+		array(
+			'id'       => 'logo_type',
+			'type'     => 'radio',
+			'title'    => esc_html__('Logo Type', 'ciyashop' ),
+			'subtitle' => esc_html__('Specify the type of Logo, It can be Text OR Logo', 'ciyashop' ),
+			'options'  => array(
+				'text'  => esc_html__('Logo as Text', 'ciyashop' ),
+				'image' => esc_html__('Logo as Image', 'ciyashop' )
+			),
+			'default' => 'image'
+		),
+		array(
+			'id'         => 'logo_text',
+			'type'       => 'text',
+			'title'      => esc_html__('Logo Text', 'ciyashop' ),
+			'subtitle'   => esc_html__('Enter the text to be used instead of the logo image.', 'ciyashop' ),
+			'default'    => esc_html__('CiyaShop', 'ciyashop' ),
+            'required'   => array('logo_type', '=', 'text'),
+		),
+		array(
+			'id'          => 'logo_font',
+			'type'        => 'typography',
+			'title'       => esc_html__('Logo Font', 'ciyashop' ),
+			'subtitle'    => esc_html__('This will be applied to Logo text only. Select logo font-style and size.', 'ciyashop' ),
+			'google'      => true,
+			'output'      => array('h2.site-description'),
+			'units'       =>'px',
+			'subsets'     => false,
+			'color'       => true,
+			'text-align'  => false,
+			'font-size'   => true,
+			'line-height' => false,
+			'font-style'  => false,
+			'font-weight' => true,
+			'default'     => array(
+				'font-family'=> 'Arial, Helvetica, sans-serif',
+				'font-size'  => '28',
+				'google'     => true,
+			),
+			'required' => array('logo_type', '=', 'text'),
+		),			
+		array(
+			'id'       => 'site-logo',
+			'type'     => 'media',
+			'url'      => true,
+			'title'    => esc_html__('Site Logo', 'ciyashop' ),
+			'compiler' => 'true',
+			'subtitle' => esc_html__('Upload any media using the WordPress native uploader', 'ciyashop' ),
+			'default'  => array('url'=> get_parent_theme_file_uri('/images/logo.png')),
+			'required' => array( 'logo_type' , '=', 'image' )
+		),
+		array(
+			'id'      => 'site-logo-max-height',
+			'type'    => 'dimensions',
+			'title'   => esc_html__('Logo Max Height', 'ciyashop' ),
+			'compiler'=> 'true',
+			'width'   => false,
+			'units'   => array('em','px'),
+			'subtitle'=> esc_html__('Controls the overall logo max height.', 'ciyashop' ),
+			'default' => array(
+				'height'  => '50',
+				'units'   => 'px',
+			),
+			'required'=> array( 'logo_type' , '=', 'image' )
+		),
+		array(
+			'id'     => 'section-end',
+			'type'   => 'section',
+			'indent' => false,
+		),
+		array(
+			'id'    => 'sticky-logo-section-start',
+			'type'  => 'section',
+			'title' => esc_html__('Sticky Logo Setting', 'ciyashop' ),
+			'indent'=> true
+		),
+		array(
+			'id'      => 'sticky-logo',
+			'type'    => 'media',
+			'url'     => true,
+			'title'   => esc_html__('Sticky Logo', 'ciyashop' ),
+			'compiler'=> 'true',
+			'subtitle'=> esc_html__('Upload sticky logo. which will be display on sticky header', 'ciyashop' ),
+			'default' => array('url'=> get_parent_theme_file_uri('/images/logo-sticky.png')),
+			'required' => array( 'logo_type' , '=', 'image' )
+		),
+		array(
+			'id'      => 'sticky-logo-max-height',
+			'type'    => 'dimensions',
+			'title'   => esc_html__('Sticky Logo Max Height', 'ciyashop' ),
+			'compiler'=> 'true',
+			'subtitle'=> esc_html__('Controls the overall sticky logo max height.', 'ciyashop' ),
+			'width'   => false,
+			'units'   => array('em','px'),
+			'default' => array(
+				'height'  => '40',
+				'units'   => 'px',
+			),
+			'required'=> array( 'logo_type' , '=', 'image' )
+		),
+		array(
+			'id'          => 'sticky_logo_font',
+			'type'        => 'typography',
+			'title'       => esc_html__('Sticky Logo Font', 'ciyashop' ),
+			'subtitle'    => esc_html__('This will be applied to Sticky Logo text only. Select sticky logo font-style and size.', 'ciyashop' ),
+			'google'      => false,
+			'output'      => array('h2.site-description'),
+			'units'       =>'px',
+			'preview' 	  => false,
+			'subsets'     => false,
+			'font-family' => false,
+			'color'       => true,
+			'text-align'  => false,
+			'font-size'   => true,
+			'line-height' => false,
+			'font-style'  => false,
+			'font-weight' => false,
+			'default'     => array(
+				'font-size'=> '20',
+				'google'   => true,
+			),
+			'required' => array('logo_type', '=', 'text'),
+		),	
+		array(
+			'id'     => 'section-end',
+			'type'   => 'section',
+			'indent' => false,
+		),
+		array(
+			'id'      => 'mobile-logo-section-start',
+			'type'    => 'section',
+			'title'   => esc_html__('Mobile Logo Setting', 'ciyashop' ),
+			'indent'  => true
+		),
+		array(
+			'id'      => 'mobile-logo',
+			'type'    => 'media',
+			'url'     => true,
+			'title'   => esc_html__('Mobile Logo', 'ciyashop' ),
+			'compiler'=> 'true',
+			'subtitle'=> esc_html__('Upload mobile logo. which will be display on mobile device.', 'ciyashop' ),
+			'default' => array('url'=> get_parent_theme_file_uri('/images/logo-mobile.png')),
+			'required'=> array( 'logo_type' , '=', 'image' )
+		),
+		array(
+			'id'      => 'mobile-logo-max-height',
+			'type'    => 'dimensions',
+			'title'   => esc_html__('Mobile Logo Max Height', 'ciyashop' ),
+			'compiler'=> 'true',
+			'subtitle'=> esc_html__('Controls the overall mobile logo height.', 'ciyashop' ),
+			'width'   => false,
+			'units'   => array('em','px'),
+			'default' => array(
+				'height'  => '40',
+				'units'   => 'px',
+			),
+			'required'=> array( 'logo_type' , '=', 'image' )
+		),
+		array(
+			'id'          => 'mobile_logo_font',
+			'type'        => 'typography',
+			'title'       => esc_html__('Mobile Logo Font', 'ciyashop' ),
+			'subtitle'    => esc_html__('This will be applied to Mobile Logo text only. Select mobile logo font-style and size.', 'ciyashop' ),
+			'google'      => false,
+			'output'      => array('h2.site-description'),
+			'units'       =>'px',
+			'preview' 	  => false,
+			'subsets'     => false,
+			'font-family' => false,
+			'color'       => true,
+			'text-align'  => false,
+			'font-size'   => true,
+			'line-height' => false,
+			'font-style'  => false,
+			'font-weight' => false,
+			'default'     => array(
+				'font-size'=> '18',
+				'google'   => true,
+			),
+			'required'=> array('logo_type', '=', 'text'),
+		),
+		array(
+			'id'      => 'section-end',
+			'type'    => 'section',
+			'indent'  => false,
+		),
+		array(
+			'id'      => 'site_description',
+			'type'    => 'switch',
+			'title'   => esc_html__('Site Description', 'ciyashop' ),
+			'subtitle'=> esc_html__('Show/hide description below logo.', 'ciyashop' ),
+			'default' => false,
+		),
+		array(
+			'id'       => 'favicon_icon',
+			'type'     => 'media',
+			'url'      => true,
+			'title'    => esc_html__('Favicon icon', 'ciyashop' ),
+			'default' => array('url'=> get_parent_theme_file_uri('/images/favicon.png')),
+			'desc'     => esc_html__('The Site Icon is used as a browser and app icon for your site. Icons must be square, and at least 512 pixels wide and tall.', 'ciyashop' ),			
+		),
+	)
+);

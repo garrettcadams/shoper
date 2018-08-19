@@ -1,0 +1,105 @@
+<?php
+return array(
+	'title'           => esc_html__('Sticky Header', 'ciyashop' ),
+	'id'              => 'main_sticky_header',	
+	'customizer_width'=> '400px',
+	'icon'            => 'fa fa-bars',
+	'fields'          => array(
+		array(
+			'id'         => esc_html__('sticky_header', 'ciyashop' ),
+			'type'       => 'switch',
+			'title'      => esc_html__('Sticky Header', 'ciyashop' ),
+			'subtitle'   => esc_html__('Enable/disable sticky header.', 'ciyashop' ),
+			'default'    => true,
+		),
+		array(
+			'id'         => esc_html__('mobile_sticky_header', 'ciyashop' ),
+			'type'       => 'switch',
+			'title'      => esc_html__('Mobile Sticky', 'ciyashop' ),
+			'subtitle'   => esc_html__('Enable/disable mobile sticky header.', 'ciyashop' ),
+			'default'    => true,
+			'required'   => array('sticky_header', '=', true),
+		),
+		array(
+			'id'      => 'woocommerce_sticky_icons-start',
+			'type'    => 'section',
+			'title'   => esc_html__('WooCommerce Icons', 'ciyashop' ),
+			'indent'  => true
+		),
+		array(
+			'id'     => 'show_sticky_header_cart',
+			'type'   => 'switch',
+			'title'  => esc_html__('Show Cart Icon', 'ciyashop' ),
+			'on'     => esc_html__('Yes', 'ciyashop' ),
+			'off'    => esc_html__('No', 'ciyashop' ),
+			'default'=> true, 
+		),
+		array(
+			'id'     => 'show_sticky_header_compare',
+			'type'   => 'switch',
+			'title'  => esc_html__('Show Compare Icon', 'ciyashop' ),
+			'on'     => esc_html__('Yes', 'ciyashop' ),
+			'off'    => esc_html__('No', 'ciyashop' ),
+			'default'=> true, 
+		),
+		array(
+			'id'     => 'show_sticky_header_wishlist',
+			'type'   => 'switch',
+			'title'  => esc_html__('Show Wishlist Icon', 'ciyashop' ),
+			'on'     => esc_html__('Yes', 'ciyashop' ),
+			'off'    => esc_html__('No', 'ciyashop' ),
+			'default'=> true, 
+		),
+		array(
+			'id'      => 'woocommerce_sticky_icons-end',
+			'type'   => 'section',
+			'indent' => false,
+		),
+		array(
+			'id'   =>'divider_1',
+			'type' => 'divide'
+		),
+		array(
+			'id'         => 'sticky_color_section_start',
+			'type'       => 'section',
+			'title'      => esc_html__( 'Sticky Color Settings', 'ciyashop' ),
+			'indent'     => true,
+			'required'   => array('sticky_header', '=', true),
+		),
+		array(
+			'id'         => esc_html__('sticky_header_color', 'ciyashop' ),
+			'type'       => 'color',
+			'title'      => esc_html__('Sticky Header Background Color', 'ciyashop' ),
+			'subtitle'   => esc_html__('Set sticky header background color.', 'ciyashop' ),
+			'default'    => '#ffffff',
+			'transparent'=> false,
+			'required'   => array('sticky_header', '=', true),
+		),
+		array(
+			'id'         => esc_html__('sticky_header_text_color', 'ciyashop' ),
+			'type'       => 'color',
+			'title'      => esc_html__('Sticky Header Text Color', 'ciyashop' ),
+			'subtitle'   => esc_html__('Set sticky header text color.', 'ciyashop' ),
+			'default'    => '#969696',
+			'transparent'=> false,
+			'required'   => array('sticky_header', '=', true),
+		),
+		array(
+			'id'         => 'sticky_header_link_color',
+			'type'       => 'color',
+			'title'      => esc_html__('Link Color', 'ciyashop' ),
+			'subtitle'   => esc_html__('Set sticky header link color.', 'ciyashop' ),
+			'mode'       => 'background-color',
+			'validate'   => 'color',
+			'transparent'=> false,
+			'default'    => '#04d39f',
+			'required'   => array('sticky_header', '=', true),
+		),
+		array(
+			'id'         => 'sticky_color_section_end',
+			'type'       => 'section',
+			'indent'     => false,
+			'required'   => array('sticky_header', '=', true),
+		),
+	)
+);

@@ -1,0 +1,10 @@
+<?php
+//About Banner
+return array(
+	'name'             => esc_html__( 'Testimonial with Brand', 'ciyashop' ),
+	'template_category'=> esc_html__( 'Testimonial', 'ciyashop' ),
+	'disabled'         => true,                                        // Disable it to not show in the default tab
+	'content'          => <<<CONTENT
+[vc_row full_width="stretch_row" pgscore_bg_type="row-background-dark" enable_first_overlay="true" first_overlay_opacity="30" first_background_color="#000000" pgscore_enable_responsive_settings="true" el_id="1524727695478-fcf1aeb3-ea91" css=".vc_custom_1526449326692{padding-top: 80px !important;padding-bottom: 60px !important;background-image: url(http://ciyashop.potenzaglobalsolutions.com/barber-shop/wp-content/uploads/sites/20/2018/04/testimonials-bg.jpg?id=81) !important;}" element_css_md=".vc_custom_1526449326696{padding-top: 60px !important;padding-bottom: 40px !important;}" element_css_sm=".vc_custom_1526449326698{padding-top: 50px !important;padding-bottom: 30px !important;}" element_css_xs=".vc_custom_1526449326701{padding-top: 40px !important;padding-bottom: 30px !important;}"][vc_column css=".vc_custom_1526449217851{padding-top: 0px !important;}"][vc_row_inner][vc_column_inner offset="vc_col-lg-offset-2 vc_col-lg-8 vc_col-md-offset-1 vc_col-md-10"][pgscore_testimonials posts_per_page="4"][/vc_column_inner][/vc_row_inner][vc_row_inner css=".vc_custom_1526449306992{margin-top: 60px !important;}"][vc_column_inner][pgscore_clients slides="%5B%7B%22slide_image%22%3A%2283%22%7D%2C%7B%22slide_image%22%3A%2284%22%7D%2C%7B%22slide_image%22%3A%2285%22%7D%2C%7B%22slide_image%22%3A%2286%22%7D%2C%7B%22slide_image%22%3A%2287%22%7D%2C%7B%22slide_image%22%3A%2288%22%7D%2C%7B%22slide_image%22%3A%2289%22%7D%2C%7B%22slide_image%22%3A%2290%22%7D%5D"][/vc_column_inner][/vc_row_inner][/vc_column][/vc_row]
+CONTENT
+);
